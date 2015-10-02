@@ -1,2 +1,3 @@
 # runmileAPI
-runmile API
+
+a [Sails](http://sailsjs.org) application
