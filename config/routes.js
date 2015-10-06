@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +45,15 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  /***************************************************************************
+   *  GET /boat -> BoatController.find                                        *
+   *  GET /boat/:id -> BoatController.findOne                                 *
+   *  POST /boat -> BoatController.create                                     *
+   *  PUT /boat/:id -> BoatController.update                                  *
+   *  DELETE /boat/:id -> BoatController.destroy                              *
+   ***************************************************************************/
+
+  'GET /student/check' : 'AccountsController.checkStudent'
 
 };
