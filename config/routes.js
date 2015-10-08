@@ -54,6 +54,11 @@ module.exports.routes = {
    *  DELETE /boat/:id -> BoatController.destroy                              *
    ***************************************************************************/
 
-  'GET /student/check' : 'AccountsController.checkStudent'
+  'GET /student/validate': {
+    target: 'AccountsController.validateStudent',
+    cors: {
+      headers: 'access-control-allow-origin, enrollment, password'
+    }
+  }
 
 };

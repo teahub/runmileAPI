@@ -7,10 +7,13 @@
 
 module.exports = {
 
-	checkStudent: function(req, res, next) {
-    SchoolService.checkStudent(req.headers.code, req.headers.pass, function(err, student){
-      if (err) next(err);
-      return res.json(student);
+  validateStudent: function(req, res, next) {
+    SchoolService.checkStudent(req.headers.enrollment, req.headers.password, function(err, student){
+      if (err) {
+        if (err.status) return res.status(err.status).json(err);
+      } else {
+        return res.json(student);
+      }
     });
 	}
 
