@@ -64,6 +64,10 @@ module.exports.connections = {
     // password: 'password',
     database: 'runmile'
   },
+  herokuMongodbServer: {
+    adapter: 'sails-mongo',
+    url: env.process.MONGOLAB_URI
+  },
 
   /***************************************************************************
   *                                                                          *
