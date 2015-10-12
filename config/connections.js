@@ -56,7 +56,7 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  localMongodbServer: {
+  local_mongo: {
     adapter: 'sails-mongo',
     host: 'localhost',
     port: 27017,
@@ -64,7 +64,8 @@ module.exports.connections = {
     // password: 'password',
     database: 'runmile'
   },
-  herokuMongodbServer: {
+
+  heroku_mongolab: {
     adapter: 'sails-mongo',
     url: process.env.MONGOLAB_URI
   },
