@@ -7,15 +7,15 @@
 
 module.exports = {
 
-  validateStudent: function(req, res, next) {
-    SchoolService.checkStudent(req.headers.enrollment, req.headers.password, function(err, student){
+  validateStudent: function (req, res, next) {
+    SchoolService.checkStudent(req.headers.enrollment, req.headers.password, function (err, student) {
       if (err) {
         if (err.status) return res.status(err.status).json(err);
       } else {
         return res.json(student);
       }
     });
-	}
+  }
 
 };
 

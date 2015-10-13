@@ -22,7 +22,7 @@ module.exports = {
   // },
 
   models: {
-    connection: 'heroku_mongolab',
+    connection: 'heroku_mongolab_config',
     migrate: 'safe'
   }
 
