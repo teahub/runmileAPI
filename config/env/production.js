@@ -41,3 +41,5 @@ module.exports = {
   // }
 
 };
+
+console.log('Production environment');

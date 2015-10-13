@@ -27,3 +27,5 @@ module.exports = {
   }
 
 };
+
+console.log('Development environment');
