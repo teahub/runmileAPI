@@ -13,7 +13,8 @@ module.exports = {
     client.bind(enrollment+'@fjn.com', password, function(err) {
       if (err) {
         callback({
-          status: 401
+          status: 401,
+          message: err
         }, null);
       } else {
         client.search('ou=Laboratorios, ou=FJN, dc=FJN, dc=COM', {
@@ -22,7 +23,8 @@ module.exports = {
         }, function(err, res) {
           if (err) {
             callback({
-              status: 503
+              status: 503,
+              message: err
             }, null);
           } else {
             res.on('searchEntry', function(entry){
@@ -32,7 +34,10 @@ module.exports = {
               callback(null, student);
             });
             res.on('error', function(err){
-              callback(err, null);
+              callback({
+                status: 503,
+                message: err
+              }, null);
             });
           }
         });
