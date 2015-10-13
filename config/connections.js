@@ -58,7 +58,7 @@ module.exports.connections = {
   ***************************************************************************/
   local_mongo: {
     adapter: 'sails-mongo',
-    url: 'mongodb://localhost/runmile'
+    url: process.env.MONGOLAB_URI || 'mongodb://localhost/runmile' //provisory
   },
 
   heroku_mongolab: {
