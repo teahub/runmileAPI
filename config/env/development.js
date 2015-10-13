@@ -22,10 +22,7 @@ module.exports = {
   // }
 
   models: {
-    connection: 'local_mongo',
-    migrate: 'safe'
+    connection: 'local_mongo'
   }
 
 };
-
-console.log('Development environment');
