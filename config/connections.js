@@ -70,15 +70,6 @@ module.exports.connections = {
     url: process.env.MONGOLAB_URI
   },
 
-  heroku_mongolab_config: {
-    adapter: 'sails-mongo',
-    host: 'ds051848.mongolab.com',
-    port: 51848,
-    user: 'heroku_0c34vx58',
-    password: '108iaf91hsqquj58n13u49cvtf',
-    database: 'heroku_0c34vx58'
-  },
-
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *
