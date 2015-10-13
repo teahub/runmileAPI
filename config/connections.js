@@ -28,7 +28,7 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
+  local_disk: {
     adapter: 'sails-disk'
   },
 
@@ -58,11 +58,12 @@ module.exports.connections = {
   ***************************************************************************/
   local_mongo: {
     adapter: 'sails-mongo',
-    host: 'localhost',
-    port: 27017,
-    // user: 'username',
-    // password: 'password',
-    database: 'runmile'
+    url: 'mongodb://localhost/runmile'
+    //host: 'localhost',
+    //port: 27017,
+    //// user: 'username',
+    //// password: 'password',
+    //database: 'runmile'
   },
 
   heroku_mongolab: {
