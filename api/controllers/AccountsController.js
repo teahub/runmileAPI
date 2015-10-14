@@ -12,7 +12,10 @@ module.exports = {
       if (err) {
         if (err.status) return res.status(err.status).json(err);
       } else {
-        return res.json(student);
+        return res.json({
+          status: 200,
+          data: student
+        });
       }
     });
   }
