@@ -51,7 +51,7 @@ module.exports.sockets = {
   // pass: '<redis auth password>',
   adapter: 'redis',
   url: process.env.REDIS_URL,
-  db: 'sails'
+  db: 'sails',
 
 
 
@@ -69,6 +69,7 @@ module.exports.sockets = {
   ***************************************************************************/
 
   // grant3rdPartyCookie: true,
+  grant3rdPartyCookie: true,
 
 
 
@@ -140,5 +141,6 @@ module.exports.sockets = {
   *                                                                          *
   ***************************************************************************/
   // transports: ["polling", "websocket"]
+  transports: ["websocket"]
 
 };
