@@ -8,35 +8,42 @@
 module.exports = {
 
   attributes: {
-    enrollment: {
-      type: 'integer',
-      size: 9,
-      required: true
-    },
-    name: {
-      type: 'string',
-      required: true
-    },
-    alias: {
-      type: 'string',
-      required: true
-    },
-    email: {
-      type: 'string',
-      //email: true,
-      required: true
-    },
-    salt: {
-      type: 'string',
-      size: 64,
-      required: true
-    },
-    password: {
-      type: 'string',
-      size: 64,
-      required: true
-    }
+      enrollment: {
+          type: 'integer',
+          size: 9,
+          required: true,
+          unique: true
+      },
+      name: {
+          type: 'string',
+          required: true
+      },
+      alias: {
+          type: 'string',
+          required: true
+      },
+      email: {
+          type: 'email',
+          required: true
+      },
+      password: {
+          type: 'string',
+          size: 64,
+          required: true
+      },
+
+      toJSON: function(){
+          var student = this.toObject();
+          delete student.password;
+          return student;
+      }
+  },
+
+  beforeCreate: function (student, next) {
+      //delete student._csrf;
+      delete student.terms;
+      student.password = CipherService.hashPassword(student.password);
+      next();
   }
 
 };
-
