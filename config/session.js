@@ -60,6 +60,7 @@ module.exports.session = {
   // pass: <redis auth password>,
   // prefix: 'sess:',
   url: process.env.REDIS_URL,
+  db: 0,
   prefix: 'sess:'
 
 
