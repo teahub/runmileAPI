@@ -52,6 +52,7 @@ module.exports.sockets = {
   adapter: 'socket.io-redis',
   url: process.env.REDIS_URL,
   db: 'sails',
+  sendResponseHeaders: true,
 
 
 
@@ -141,6 +142,6 @@ module.exports.sockets = {
   *                                                                          *
   ***************************************************************************/
   // transports: ["polling", "websocket"]
-  transports: ["websocket"]
+  transports: ['websocket', 'polling']
 
 };
