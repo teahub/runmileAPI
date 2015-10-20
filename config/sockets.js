@@ -52,7 +52,6 @@ module.exports.sockets = {
   adapter: 'socket.io-redis',
   url: process.env.REDIS_URL,
   db: 'sails',
-  sendResponseHeaders: true,
 
 
 
