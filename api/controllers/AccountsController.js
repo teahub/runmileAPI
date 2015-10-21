@@ -11,12 +11,9 @@ module.exports = {
         // Student.findone();
         SchoolService.checkStudent(req.headers.enrollment, req.headers.password, function (err, student) {
             if (err) {
-                if (err.status) return res.status(err.status).json(err);
+                return res.json(err.status, err.message);
             } else {
-                return res.json({
-                    status: 200,
-                    data: student
-                });
+                return res.json(200, student);
             }
         });
     }

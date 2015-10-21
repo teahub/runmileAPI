@@ -14,12 +14,7 @@ module.exports = {
         return res.json(err);
       } else {
         var token = JWTService.issue({id: student.id});
-        return res.json({
-          status: 200,
-          data: {
-            token: token
-          }
-        });
+        return res.json(200, {token: token});
       }
     });
 
